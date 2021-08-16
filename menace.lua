@@ -30,6 +30,6 @@ b:Toggle("Grab",function(bool)
     if bool then
         doGrab();
     end
-end
+end)
 
 b:DestroyGui()
