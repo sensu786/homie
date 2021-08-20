@@ -91,15 +91,9 @@ local Section4 = Tab2:CreateSection("Background")
 local Toggle1 = Section1:CreateToggle("Auto Attack", nil, function(State) --find attack remote
     w2 = State
     while w2 do wait()
-	local args = {
-		[1] = "FireCombat2036615479"
-    	}
-
+	local args = { [1] = "FireCombat2036615479" }
     	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))(false,nil,nil)
-	local args = {
-		[1] = "FireCombat2036615479"
-    	}
-
+	local args = { [1] = "FireCombat2036615479" }
     	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))true,nil,nil)
     end 
 end)
