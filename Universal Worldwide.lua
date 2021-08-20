@@ -278,21 +278,6 @@ local Toggle1 = Section2:CreateToggle("Stun All Mobs", nil, function(State)
     end 
 end)
 
-local Toggle1 = Section2:CreateToggle("Unstun Self", nil, function(State)
-    stun = State
-    while wait(2) do
-        pcall(function()
-            if stun then
-                for i,v in pairs(game:GetService("Workspace").Humanoids.sensu786()) do
-                    if v:IsA("Part") and v.Name == "HumanoidRootPart" then
-                        v.Anchored = false
-                    end 
-                end 
-            end 
-        end) 
-    end 
-end
-
 local Toggle1 = Section2:CreateToggle("Jump Mobs", nil, function(State)
     deeznuts = State
         while deeznuts do wait(1)
