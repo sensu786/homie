@@ -75,7 +75,7 @@ game:GetService('RunService').Stepped:connect(function()
     end) 
 end) 
 
-system = {'Bandit',"IceWizard","DivineKing","KingOfWinds","LeonShield"} --find model names
+system = {'Bandit',"IceWizard",} --find model names
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/im-retarded-3"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
@@ -91,8 +91,16 @@ local Section4 = Tab2:CreateSection("Background")
 local Toggle1 = Section1:CreateToggle("Auto Attack", nil, function(State) --find attack remote
     w2 = State
     while w2 do wait()
-        game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(false,nil,nil)
-        game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(true,nil,nil)
+	local args = {
+		[1] = "FireCombat2036615479"
+    	}
+
+    	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))(false,nil,nil)
+	local args = {
+		[1] = "FireCombat2036615479"
+    	}
+
+    	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))true,nil,nil)
     end 
 end)
 
@@ -155,7 +163,7 @@ local Toggle1 = Section1:CreateToggle("Auto Bosses", nil, function(State)
         while system3 do wait()
             pcall(function()
                 for i,v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
-                    if v:IsA("Model") and v.Name == "Ronin" and v:FindFirstChildOfClass("Humanoid")  and v.Humanoid.Health > 0 then
+                    if v:IsA("Model") and v.Name == "KiddStan" or v.Name == "CrimsonMikami" and v:FindFirstChildOfClass("Humanoid")  and v.Humanoid.Health > 0 then
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame  * CFrame.new(0,-4,0)  
                         wait(0.3)
                         c()
@@ -268,7 +276,7 @@ local Toggle1 = Section2:CreateToggle("Stun All Mobs", nil, function(State)
     while wait(2) do
         pcall(function()
             if stun then
-                for i,v in pairs(game:GetService("Workspace").Humanoids:GetDescendants()) do
+                for i,v in pairs(game:GetService("Workspace").NPCS:GetDescendants()) do
                     if v:IsA("Part") and v.Name == "HumanoidRootPart" then
                         v.Anchored = true
                     end 
@@ -281,7 +289,7 @@ end)
 local Toggle1 = Section2:CreateToggle("Jump Mobs", nil, function(State)
     deeznuts = State
         while deeznuts do wait(1)
-        for i,v in pairs(game:GetService("Workspace").Humanoids:GetDescendants()) do
+        for i,v in pairs(game:GetService("Workspace").NPCS:GetDescendants()) do
             if v:IsA("Humanoid") then
                 v.Jump = true
             end 
@@ -292,7 +300,7 @@ end)
 local Toggle1 = Section2:CreateToggle("Sit Mobs", nil, function(State)
     deeznuts1 = State
     while deeznuts1 do wait(1)
-        for i,v in pairs(game:GetService("Workspace").Humanoids:GetDescendants()) do
+        for i,v in pairs(game:GetService("Workspace").NPCS:GetDescendants()) do
             if v:IsA("Humanoid") then
                 v.Sit = true
             end 
