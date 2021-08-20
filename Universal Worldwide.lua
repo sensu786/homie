@@ -92,9 +92,9 @@ local Toggle1 = Section1:CreateToggle("Auto Attack", nil, function(State) --find
     w2 = State
     while w2 do wait()
 	local args = { [1] = "FireCombat2036615479" }
-    	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))(false,nil,nil)
+    		game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))
 	local args = { [1] = "FireCombat2036615479" }
-    	game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))(true,nil,nil)
+    		game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))
     end 
 end)
 
@@ -122,14 +122,16 @@ local Toggle1 = Section1:CreateToggle("Auto Mob", nil, function(State)
     spawn(function()
         while system2 do wait()
             pcall(function()
-                for i,v in pairs(game:GetService("Workspace").Live:GetDescendants()) do --change folder to mobs
+                for i,v in pairs(game:GetService("Workspace").Humanoids:GetDescendants()) do --change folder to mobs
                     if v:IsA("Model") and v.Name == system and v:FindFirstChildOfClass("Humanoid") and v.Humanoid.Health > 0 then
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame  * CFrame.new(0,-4,0) 
                         wait(0.3)
                         c()
                         wait(0.3)
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(false,nil,nil) --change remote to auto remot full thing
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(true,nil,nil)
+                        local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))
+			local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args)))
                         wait(0.3)
                         v.Humanoid.Health = 0
                     end
@@ -156,13 +158,15 @@ local Toggle1 = Section1:CreateToggle("Auto Bosses", nil, function(State)
         end)
         while system3 do wait()
             pcall(function()
-                for i,v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
-                    if v:IsA("Model") and v.Name == "KiddStan" or v.Name == "CrimsonMikami" and v:FindFirstChildOfClass("Humanoid")  and v.Humanoid.Health > 0 then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame  * CFrame.new(0,-4,0)  
+                for i,v in pairs(game:GetService("Workspace").Humanoids:GetDescendants()) do
+                    if v:IsA("Model") and v.Name == "Ronin" and v:FindFirstChildOfClass("Humanoid")  and v.Humanoid.Health > 0 then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame  * CFrame.new(0,0,5)  
                         wait(0.3)
                         c()
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(false,nil,nil)
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(true,nil,nil)
+                        local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))
+			local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))) 
                         v.CharacterValues.Disabled.Value = true 
                     end
                 end
@@ -230,8 +234,10 @@ local Toggle1 = Section1:CreateToggle("N/A (don't press)", nil, function(State)
                         wait(0.3)
                         c()
                         wait(0.3)
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(false,nil,nil)
-                        game:GetService("ReplicatedStorage").RemoteEvents.BladeCombatRemote:FireServer(true,nil,nil)
+                        local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args))
+			local args = { [1] = "FireCombat2036615479" }
+    				game:GetService("Players").LocalPlayer.Backpack.Fire.Fire.MoveHandler:FireServer(unpack(args)))
                         wait(0.3)
                         v.Humanoid.Health = 0
                     end 
