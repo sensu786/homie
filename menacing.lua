@@ -89,17 +89,6 @@ local Section2 = Tab1:CreateSection("Misc")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
 
-local Toggle1 = Section1:CreateToggle("Auto Skills", nil, function(State) --find skills buttons
-    for i,v in pairs({'E','R','T','Y','F','H',"J"}) do 
-    ee = State
-        coroutine.wrap(function() --nice
-            while ee do wait()
-                game:GetService('VirtualInputManager'):SendKeyEvent(true,v,false,uwu)
-            end 
-        end)()
-    end 
-end)
-
 getgenv().grabItem = false;
 
 function doGrab()
