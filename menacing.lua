@@ -108,7 +108,7 @@ function doGrab()
     end)
 end
 
-local Toggle1 = Section1:CreateToggle("Auto Farm Items", nil, function(bool)
+local Toggle1 = Section1:CreateToggle("Farm Items", nil, function(bool)
  getgenv().grabItem = bool
     print("Auto Grab is: ", bool);
     if bool then
